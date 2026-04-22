@@ -18,7 +18,7 @@ public class PersonneMapper {
 
     public static Personne mapToPersonne(PersonneDto personneDto){
         return new Personne(
-                personneDto.getId(),
+                null,
                 personneDto.getPrenom(),
                 personneDto.getNom(),
                 personneDto.getTelephone(),

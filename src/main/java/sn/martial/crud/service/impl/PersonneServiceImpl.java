@@ -28,14 +28,14 @@ public class PersonneServiceImpl implements PersonneService {
     @Override
     public PersonneDto personneById(Long id) {
         Personne personne = personneRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Personne not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Personne non trouvé avec cet id: " + id));
         return PersonneMapper.mapToPersonneDto(personne);
     }
 
     @Override
     public PersonneDto updatePersonne(long id, PersonneDto personneDto) {
         Personne personne = personneRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Personne not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Personne non trouvé avec cet id: " + id));
 
         personne.setNom(personneDto.getNom());
         personne.setPrenom(personneDto.getPrenom());
